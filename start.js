@@ -12,20 +12,38 @@ function goResult() {
 }
 
 function addAnswer(answerText, qIdx){
-    var a = document.querySelector('.aBox');
-    var answer = document.createElement('button');
-    answer.classList.add('answerList');
-    a.appendChild(answer);
-    answer.innerHTML = answerText;
+    // LEGACY:
+    // var a = document.querySelector('.aBox');
+    // var answer = document.createElement('button');
 
-    answer.addEventListener("click",function(){
+    // ADDED:
+    // 리스트 아이템 추가
+    var ul = document.querySelector('.list-group');
+    let answer = document.createElement('list');
+    answer.classList.add('answerList', 'list-group-item');
+    ul.appendChild(answer)
+
+    // LEGACY:
+    // a.appendChild(answer);
+
+    answer.innerHTML = answerText;
+    answer.addEventListener("click", () => {
         var children = document.querySelectorAll('.answerList');
         for(let i = 0; i < children.length; i++){
             children[i].disabled = true;
             children[i].style.display = 'none';
         }
         goNext(++qIdx);
-    }, false);
+    });
+
+    // ADDED:
+    // 리스트 아이템 마우스이벤트 리스너 추가
+    answer.addEventListener("mouseover", () => { 
+        answer.classList.add('active')
+    });
+    answer.addEventListener("mouseout", () => {
+        answer.classList.remove('active')
+    });
 }
 
 function start() {
@@ -42,6 +60,13 @@ function goNext(qIdx) {
 
     var q = document.querySelector('.qBox');
     q.innerHTML = qnaList[qIdx].q.question;
+
+    // ADDED
+    // button이 아닌 bootstrap list의 사용은 어떨까요?
+    let list = document.createElement('ul')
+    list.classList.add('list-group', 'list-group-flush')
+    var a = document.querySelector('.aBox');
+    a.appendChild(list);
     for(let i in qnaList[qIdx].a){
         addAnswer(qnaList[qIdx].a[i].answer, qIdx);
     }
