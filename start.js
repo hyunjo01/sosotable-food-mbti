@@ -56,9 +56,9 @@ const calcScore = () => {
 
     return point;
     console.log("point: " + point)
-  }
+}
 
-  const sortResult = (point) => {
+const sortResult = (point) => {
     let num;
     if (point == "ESTJ") {
       num = 0;
@@ -95,19 +95,14 @@ const calcScore = () => {
     }
     return num;
     console.log("num: " + num)
-  }
+}
 
-  const point = calcScore();
-  const grade = sortResult(point);
+const point = calcScore();
+const grade = sortResult(point);
 
 
 qnaPage.style.display = "none";
 resultPage.style.display = "none";
-
-function goResult() {
-    qnaPage.style.display = "none";
-    resultPage.style.display = "block";
-}
 
 function addAnswer(answerText, qIdx){
     var a = document.querySelector('.aBox');
@@ -143,5 +138,25 @@ function goNext(qIdx) {
     for(let i in qnaList[qIdx].a){
         addAnswer(qnaList[qIdx].a[i].answer, qIdx);
     }
+}
+
+/**
+ * MARK
+ * 결과 창 넘어가는 함수
+ */
+function goResult() {
+    qnaPage.style.display = "none";
+    resultPage.style.display = "block";
+    addResult(grade)
+}
+/**
+ * MARK
+ * 결과 값 창에 띄우는 함수
+ */
+function addResult(grade) {
+    let name = document.querySelector('.nameBox');
+    let desc = document.querySelector('.descBox');
+    name.innerHTML = infoList[grade].name;
+    desc.innerHTML = infoList[grade].desc;
 }
 
