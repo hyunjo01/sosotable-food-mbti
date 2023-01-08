@@ -1,7 +1,105 @@
 const startPage = document.querySelector('#start-page')
 const qnaPage = document.querySelector('#qna-page')
 const resultPage = document.querySelector('#result-page')
-const endPoint = 4;
+const endPoint = 12;
+
+
+const calcScore = () => {
+    let eipoint = 0;
+    for (let i = 0; i < endPoint; i++) {
+        if (qnaList[i].q.type == "EI") 
+        {
+            eipoint += qnaList[i].a[select[i]].score;
+        }
+    }
+    let EI;
+    if (eipoint <5) EI = "I"
+    else EI = "E"
+
+
+    let snpoint = 0;
+    for (let i = 0; i < endPoint; i++) {
+        if (qnaList[i].q.type == "SN") 
+        {
+            snpoint += qnaList[i].a[select[i]].score;
+        }
+    }
+    let SN;
+    if (snpoint <5) SN = "S"
+    else SN = "N"
+
+
+    let ftpoint = 0;
+    for (let i = 0; i < endPoint; i++) {
+        if (qnaList[i].q.type == "FT") 
+        {
+            ftpoint += qnaList[i].a[select[i]].score;
+        }
+    }
+    let FT;
+    if (ftpoint <5) FT = "F"
+    else FT = "T"
+
+
+    let pjpoint = 0;
+    for (let i = 0; i < endPoint; i++) {
+        if (qnaList[i].q.type == "PJ") 
+        {
+            pjpoint += qnaList[i].a[select[i]].score;
+        }
+    }
+    let PJ;
+    if (pjpoint <5) PJ = "P"
+    else PJ = "J"
+
+    let point = EI + SN + FT + PJ
+
+    return point;
+    console.log("point: " + point)
+  }
+
+  const sortResult = (point) => {
+    let num;
+    if (point == "ESTJ") {
+      num = 0;
+    } else if (point == "ISTJ") {
+      num = 1;
+    } else if (point == "ENTJ") {
+      num = 2;
+    } else if (point == "INTJ") {
+      num = 3;
+    } else if (point == "ESFJ") {
+      num = 4;
+    } else if (point == "ISFJ") {
+        num = 5;
+    } else if (point == "ENFJ") {
+        num = 6;
+    } else if (point == "INFJ") {
+        num = 7;
+    } else if (point == "ESTP") {
+        num = 8;
+    } else if (point == "ISTP") {
+        num = 9;
+    } else if (point == "ENTP") {
+        num = 10;
+    } else if (point == "INTP") {
+        num = 11;
+    } else if (point == "ESFP") {
+        num = 12;
+    } else if (point == "ISFP") {
+        num = 13;
+    } else if (point == "ENFP") {
+        num = 14;
+    } else if (point == "INFP") {
+        num = 15;
+    }
+    return num;
+    console.log("num: " + num)
+  }
+
+  const point = calcScore();
+  const grade = sortResult(point);
+
 
 qnaPage.style.display = "none";
 resultPage.style.display = "none";
@@ -18,7 +116,7 @@ function addAnswer(answerText, qIdx){
     a.appendChild(answer);
     answer.innerHTML = answerText;
 
-    answer.addEventListener("click",function(){
+    answer.addEventListener("click",() => {
         var children = document.querySelectorAll('.answerList');
         for(let i = 0; i < children.length; i++){
             children[i].disabled = true;
