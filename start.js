@@ -1,6 +1,8 @@
 const startPage = document.querySelector('#start-page')
 const qnaPage = document.querySelector('#qna-page')
 const resultPage = document.querySelector('#result-page')
+const progressBar = document.querySelector('.progress-bar')
+
 const endPoint = 12;
 const select = [];
 
@@ -121,7 +123,10 @@ function goNext(qIdx) {
 
     var q = document.querySelector('.qBox');
     q.innerHTML = qnaList[qIdx].q.question;
-        addAnswer(qnaList[qIdx].a[0].answer, qnaList[qIdx].a[1].answer, qIdx); /**ADDED qnaList 두번째 답변이랑 qIdx도 같이 보냄. */
+    addAnswer(qnaList[qIdx].a[0].answer, qnaList[qIdx].a[1].answer, qIdx); /**ADDED qnaList 두번째 답변이랑 qIdx도 같이 보냄. */
+
+    // 진행도 계산
+    progressBar.style.width = (100/endPoint) * (qIdx+1) + '%';
 }
 
 /** MARK
@@ -190,28 +195,3 @@ function sortResult(point) {
     //console.log(num)
     return num;
 }
-
-
-/**
- * MARK
- * 결과 창 넘어가는 함수
- */
-function goResult() {
-    qnaPage.style.display = "none";
-    resultPage.style.display = "block";
-    addResult(grade)
-}
-/**
- * MARK
- * 결과 값 창에 띄우는 함수
- */
-function addResult(grade) {
-    let name = document.querySelector('.nameBox');
-    let desc = document.querySelector('.descBox');
-    name.innerHTML = infoList[grade].name;
-    desc.innerHTML = infoList[grade].desc;
-    console.log(point)
-    console.log(grade)
-    //console.log(typeof grade)
-}
-
