@@ -22,6 +22,8 @@ let snpoint = 0;
 let ftpoint = 0;
 let pjpoint = 0;
 
+let point, grade;
+
 
 /**ADDED
  * 
@@ -31,11 +33,13 @@ let pjpoint = 0;
  * 답변1과 답변2 처리를 한번에 하게 수정.
  */
 function addAnswer(answerText1, answerText2, qIdx){
-    var a = document.querySelector('.aBox');
-    var answer1 = document.createElement('button');
-    var answer2 = document.createElement('button');
-    answer1.classList.add('answerList');
-    answer2.classList.add('answerList');
+    // REFACTOR: 변수라면 let, 상수 or 불변 객체라면 const 사용 해 주세요
+    const a = document.querySelector('.aBox');
+    const answer1 = document.createElement('button');
+    const answer2 = document.createElement('button');
+    // ADDED: classList btn 추가
+    answer1.classList.add('answerList', 'btn');
+    answer2.classList.add('answerList', 'btn');
     a.appendChild(answer1);
     a.appendChild(answer2);
     answer1.innerHTML = answerText1;
@@ -47,8 +51,10 @@ function addAnswer(answerText1, answerText2, qIdx){
      * 답변의 타입 확인하고
      * 타입에 맞는 point에 첫번째 답변 score가 더해짐.
      */
+    /** TODO:
+     * 이벤트 리스너 등록 foreach등의 반복문 사용하여 등록해 보세요
+     **/
     answer1.addEventListener("click",() => {
-
         if (qnaList[qIdx].q.type == "EI") {
             eipoint += qnaList[qIdx].a[0].score;
             //console.log("실행")
@@ -64,8 +70,6 @@ function addAnswer(answerText1, answerText2, qIdx){
         else if (qnaList[qIdx].q.type == "PJ") {
             pjpoint += qnaList[qIdx].a[0].score;
         }
-
-
 
         var children = document.querySelectorAll('.answerList');
         for(let i = 0; i < children.length; i++){            
@@ -111,8 +115,9 @@ function start() {
     goNext(qIdx);
 }
 
-let point;
-let grade;
+// REFACTOR: 변수 선언은 파일 맨 위에만 해 주세요
+// let point;
+// let grade;
 
 function goNext(qIdx) {
     if(qIdx === endPoint){
@@ -121,7 +126,7 @@ function goNext(qIdx) {
         goResult();
     }
 
-    var q = document.querySelector('.qBox');
+    const q = document.querySelector('.qBox');
     q.innerHTML = qnaList[qIdx].q.question;
     addAnswer(qnaList[qIdx].a[0].answer, qnaList[qIdx].a[1].answer, qIdx); /**ADDED qnaList 두번째 답변이랑 qIdx도 같이 보냄. */
 

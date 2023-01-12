@@ -1,0 +1,9 @@
+@media only screen and (max-width : 768px) {
+
+}
+.card {
+    width: 100% !important;
+    height: 70%;
+    margin: 10% 5% auto 5%;
+}
+
