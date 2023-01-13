@@ -164,7 +164,8 @@ const taste = [
       {answer: "덜매운맛", score: 4},
       {answer: "오리지널", score: 5},
       {answer: "매운맛", score: 6},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "2. 즐겨먹는 커피, 카페 음료"},
@@ -175,7 +176,8 @@ const taste = [
       {answer: "스무디", score: 4},
       {answer: "티", score: 5},
       {answer: "안먹음", score: 6},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "3. 좋아하는 콜라"},
@@ -185,7 +187,8 @@ const taste = [
       {answer: "코카콜라 제로", score: 3},
       {answer: "펩시제로", score: 4},
       {answer: "안먹음", score: 5},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "4. 좋아하는 고기"},
@@ -195,7 +198,8 @@ const taste = [
       {answer: "닭고기", score: 3},
       {answer: "양고기", score: 4},
       {answer: "안먹음", score: 5},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "5. 좋아하는 곱창"},
@@ -203,7 +207,8 @@ const taste = [
       {answer: "돼지곱창", score: 1},
       {answer: "소곱창", score: 2},
       {answer: "안먹음", score: 3},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "6. 붕어빵"},
@@ -211,7 +216,8 @@ const taste = [
       {answer: "팥붕", score: 1},
       {answer: "슈붕", score: 2},
       {answer: "안먹음", score: 3},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "호빵"},
@@ -220,14 +226,16 @@ const taste = [
       {answer: "야채호빵", score: 2},
       {answer: "피자호빵", score: 3},
       {answer: "안먹음", score: 4},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "회"},
     a: [
       {answer: "먹음", score: 1},
       {answer: "못먹음", score: 2},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "좋아하는 주종"},
@@ -237,7 +245,8 @@ const taste = [
       {answer: "양주", score: 3},
       {answer: "칵테일/하이볼", score: 4},
       {answer: "안먹음", score: 5},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "소주 종류"},
@@ -246,7 +255,8 @@ const taste = [
       {answer: "참이슬", score: 2},
       {answer: "진로", score: 3},
       {answer: "안먹음", score: 4},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "좋아하는 우유"},
@@ -256,7 +266,8 @@ const taste = [
       {answer: "딸기우유", score: 3},
       {answer: "바나나우유", score: 4},
       {answer: "안먹음", score: 5},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "고기 먹고 후식"},
@@ -266,7 +277,8 @@ const taste = [
       {answer: "된장찌개", score: 3},
       {answer: "김치찌개", score: 4},
       {answer: "안먹음", score: 5},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "복숭아"},
@@ -274,7 +286,8 @@ const taste = [
       {answer: "물복", score: 1},
       {answer: "딱복", score: 2},
       {answer: "안먹음", score: 3},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "탕수육"},
@@ -282,7 +295,8 @@ const taste = [
       {answer: "부먹", score: 1},
       {answer: "찍먹", score: 2},
       {answer: "안먹음", score: 3},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "떠볶이 떡"},
@@ -290,7 +304,8 @@ const taste = [
       {answer: "밀떡", score: 1},
       {answer: "쌀떡", score: 2},
       {answer: "안먹음", score: 3},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "파스타"},
@@ -300,7 +315,8 @@ const taste = [
       {answer: "로제 파스타", score: 3},
       {answer: "오일 파스타", score: 4},
       {answer: "안먹음", score: 5},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "라면"},
@@ -310,7 +326,8 @@ const taste = [
       {answer: "짜장라면", score: 3},
       {answer: "비빔라면", score: 4},
       {answer: "안먹음", score: 5},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "짜장 vs 짬뽕"},
@@ -318,7 +335,8 @@ const taste = [
       {answer: "짜장면", score: 1},
       {answer: "짬뽕", score: 2},
       {answer: "안먹음", score: 3},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "마라탕 vs 마라샹궈"},
@@ -326,7 +344,8 @@ const taste = [
       {answer: "마라탕", score: 1},
       {answer: "마라샹궈", score: 2},
       {answer: "안먹음", score: 3},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "떡볶이"},
@@ -334,14 +353,16 @@ const taste = [
       {answer: "시장 떡볶이", score: 1},
       {answer: "브랜드 떡볶이", score: 2},
       {answer: "안먹음", score: 3},
-    ]
+    ],
+    correct: 0
   },
   {
     q: {question: "민트초코"},
     a: [
       {answer: "민초", score: 1},
       {answer: "반민초", score: 2}
-    ]
+    ],
+    correct: 0
   }
 ]
 
