@@ -57,9 +57,6 @@ function addAnswer(answerText1, answerText2, qIdx){
     answer1.addEventListener("click",() => {
         if (qnaList[qIdx].q.type == "EI") {
             eipoint += qnaList[qIdx].a[0].score;
-            //console.log("실행")
-            //console.log(qnaList[qIdx].a[0].score)
-            //console.log(eipoint)
         }
         else if (qnaList[qIdx].q.type == "SN") {
             snpoint += qnaList[qIdx].a[0].score;
@@ -71,7 +68,7 @@ function addAnswer(answerText1, answerText2, qIdx){
             pjpoint += qnaList[qIdx].a[0].score;
         }
 
-        var children = document.querySelectorAll('.answerList');
+        const children = document.querySelectorAll('.answerList');
         for(let i = 0; i < children.length; i++){            
             children[i].disabled = true;
             children[i].style.display = 'none';
@@ -86,8 +83,6 @@ function addAnswer(answerText1, answerText2, qIdx){
     answer2.addEventListener("click",() => {
         if (qnaList[qIdx].q.type == "EI") {
             eipoint += qnaList[qIdx].a[1].score;
-            //console.log("실행")
-            //console.log(qnaList[qIdx].a[1].score)
         }
         else if (qnaList[qIdx].q.type == "SN") {
             snpoint += qnaList[qIdx].a[1].score;
@@ -99,7 +94,7 @@ function addAnswer(answerText1, answerText2, qIdx){
             pjpoint += qnaList[qIdx].a[1].score;
         }
 
-        var children = document.querySelectorAll('.answerList');
+        const children = document.querySelectorAll('.answerList');
         for(let i = 0; i < children.length; i++){            
             children[i].disabled = true;
             children[i].style.display = 'none';
@@ -115,9 +110,6 @@ function start() {
     goNext(qIdx);
 }
 
-// REFACTOR: 변수 선언은 파일 맨 위에만 해 주세요
-// let point;
-// let grade;
 
 function goNext(qIdx) {
     if(qIdx === endPoint){
@@ -127,7 +119,8 @@ function goNext(qIdx) {
     }
 
     const q = document.querySelector('.qBox');
-    q.innerHTML = qnaList[qIdx].q.question;
+    // REFACTOR: 결과 이름 창 h1태그로 변경(가시성)
+    q.innerHTML = `<h5>${qnaList[qIdx].q.question}</h5>`;
     addAnswer(qnaList[qIdx].a[0].answer, qnaList[qIdx].a[1].answer, qIdx); /**ADDED qnaList 두번째 답변이랑 qIdx도 같이 보냄. */
 
     // 진행도 계산
@@ -197,6 +190,5 @@ function sortResult(point) {
     } else if (point == "INFP") {
         num = 15;
     }
-    //console.log(num)
     return num;
 }

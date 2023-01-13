@@ -13,15 +13,20 @@
   <nav class="navbar navbar-light bg-light bg-transparent">
     <a class="navbar-brand d-flex" href="index.html">
       <div class="brand-box">
-        <img src="img/logo.png" alt="소소식탁" class="box-img d-inline-block align-text-top">
+        <!--            REFACTOR: align-img-top 클래스 이미지 잘림 => 제거-->
+        <img src="img/logo.png" alt="소소식탁" class="box-img d-inline-block">
       </div>
       <p style="margin: auto; padding: 0 0 0 10px;">소소식탁</p>
     </a>
   </nav>
   <main class="d-flex flex-column">
     <div id="start-page" class="card w-75 mx-auto text-center"><div class="card-body gap-2">
+      <div class="content-title-box">
+        <!--            REFACTOR: align-img-top 클래스 이미지 잘림 => 제거-->
+        <img src="img/mbti/title.jpeg" alt="소소식탁" class="content-title-box-img d-inline-block">
+      </div>
       <h5 class="card-title">푸비티아이(Food MBTI)</h5>
-      <p class="card-text">음식으로 알아보는 성격유형</p>
+      <p class="card-text">두근두근 신학기가 시작되었어요!<br>새로움과 설렘이 가득해요<br>개강 후 일어나는 여러 상황에서 나에게 맞는 선택을 하고 결과를 확인해보세요!</p>
       <a href="#" class="btn btn-primary" onclick="js:start()">검사 시작</a>
     </div>
     </div>
@@ -34,8 +39,17 @@
     </div>
     </div>
     <div id="result-page" class="card w-75 mx-auto text-center"><div class="card-body gap-2">
-      <div class="nameBox card-title"></div>
-      <div class="descBox card-body"></div>
+      <div class="card-img-top res-box">
+<!--        ADDED: -->
+<!--        결과 이미지 id selector 추가-->
+        <img id="res-img" class="res-img" src="../sosotable-food-mbti/img/food_placeholder.png" alt="결과 이미지">
+      </div>
+      <div class="nameBox card-title">
+
+      </div>
+      <div class="descBox card-body">
+
+      </div>
     </div>
     </div>
   </main>

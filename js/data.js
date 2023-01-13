@@ -1,34 +1,35 @@
+// REFACTOR: 가시성을 위한 줄바꿈처리
 const qnaList = [
   {
-    q: { question: '드디어 내일이 개강날이네. 나름 파티인데 옷 좀 신경 써서 입고 갈까?', type: 'PJ'},
+    q: { question: '드디어 내일이 개강날이네.<br>나름 파티인데 옷 좀 신경 써서 입고 갈까?', type: 'PJ'},
     a: [
         { answer: '피곤하니까 일단 자고 내일 생각해야지 히히', score: 1 },
-        { answer: '(날씨를 미리 검색해본 후) 내일 날씨가 조금 쌀쌀하네? 이거랑 이거 입고 가야겠다.', score: 2 }
+        { answer: '(날씨를 미리 검색해본 후)<br>내일 날씨가 조금 쌀쌀하네?<br>이거랑 이거 입고 가야겠다.', score: 2 }
       ]
   },
     {
         q: { question: '대망의 개강날. 학교 가는 길에 나는', type: 'SN'},
         a: [
             { answer: '하암 피곤해… 점심 뭐 먹지?', score: 1 },
-            { answer: '친구들과 만나면 무슨 얘기를 할 지, 교수님이 진도를 나가실지 상상한다.', score: 2 }
+            { answer: '친구들과 만나면 무슨 얘기를 할 지,<br>교수님이 진도를 나가실지 상상한다.', score: 2 }
         ]
     },
     {
         q: { question: '수업에 들어가기 전 과방에 들렀더니 오랜만에 보는 동기들이 있다. 이 때 나는', type: 'EI'},
         a: [
-            { answer: '헉 얘들아 오랜만이야~! 다들 방학 동안 뭐하고 지냈어?!', score: 1 },
+            { answer: '헉 얘들아 오랜만이야~!<br> 방학 동안 뭐하고 지냈어?!', score: 1 },
             { answer: '(먼저 와서 말 걸어줬으면 좋겠당… ㅎㅎ)', score: 2 }
         ]
     },
     {
-        q: { question: '학과 행사로 개강파티가 열린다고 한다. 필참하라는 소식을 들은 나는?', type: 'EI'},
+        q: { question: '학과 행사로 개강파티가 열린다고 한다.<br>필참하라는 소식을 들은 나는?', type: 'EI'},
         a: [
             { answer: '새로운 사람 많이 사귈 수 있겠다! 벌써부터 신난다.', score: 1 },
             { answer: '어색한 사람도 많을텐데! 벌써부터 걱정이 된다.', score: 2 }
         ]
     },
     {
-        q: { question: '수업이 시작 했는데 친구가 오지 않는다. 결국 지각한 친구가 오다가 사고가 났다고 한다.', type: 'FT'},
+        q: { question: '수업이 시작 했는데 친구가 오지 않는다.<br>결국 지각한 친구가 오다가 사고가 났다고 한다.', type: 'FT'},
         a: [
             { answer: '헉 어떡해 많이 놀랐겠다…  괜찮아? ', score: 1 },
             { answer: '사고가 왜 났어? 너가 냈어? 보험은??', score: 2 }
@@ -44,22 +45,22 @@ const qnaList = [
     {
         q: { question: '강의를 듣는 중, 오티 주인데도 교수님이 과제를 내주셨다.', type: 'PJ'},
         a: [
-            { answer: '아 하기 싫어… 근데 다음 주 수업 전까지만 끝내면 되는 거 아니야? 일단 놀자~', score: 1 },
-            { answer: '으 무슨 오티 주부터 과제야… 오늘은 개강파티니까 내일 바로 끝내버려야겠다.', score: 2 }
+            { answer: '아 하기 싫어…<br>근데 다음 주 수업 전까지만<br>끝내면 되는 거 아니야? 일단 놀자~', score: 1 },
+            { answer: '으 무슨 오티 주부터 과제야…<br>오늘은 개강파티니까 내일 바로 끝내버려야겠다.', score: 2 }
         ]
     },
     {
         q: { question: '친구와 점심 약속을 잡았다. 나는?', type: 'PJ'},
         a: [
             { answer: '뭐 먹지? 맛있는 거 먹어야겠다~', score: 1 },
-            { answer: '뭐 먹지? A식당은 맛있지만 가격이 비싸고 B식당은 …', score: 2 }
+            { answer: '뭐 먹지? A식당은 맛있지만 가격이 비싸고<br> B식당은 …', score: 2 }
         ]
     },
     {
-        q: { question: '수업 끝~! 점심시간이다. 친구들과 식당에 갔는데 사장님이 우리를 알아보시고 오랜만이라며 서비스를 주셨다.', type: 'SN'},
+        q: { question: '수업 끝~! 점심시간이다. 친구들과 식당에 갔는데,<br>사장님이 우리를 알아보시고 오랜만이라며 서비스를 주셨다.', type: 'SN'},
         a: [
             { answer: '서비스 개이득! 잘 먹겠습니다~', score: 1 },
-            { answer: '헉 우리를 기억해주시다니..! 감동이야🥺 근데 어떻게 알아보셨지? 기억을 더듬으며 생각해본다.2', score: 2 }
+            { answer: '헉 우리를 기억해주시다니..! 감동이야🥺<br>근데 어떻게 알아보셨지?<br>기억을 더듬으며 생각해본다.', score: 2 }
         ]
     },
     {
@@ -73,90 +74,110 @@ const qnaList = [
         q: { question: '갑자기 정전이 일어났다. 나는?', type: 'SN'},
         a: [
             { answer: '정전났네? 언제 복구되려나. 별 생각 없다.', score: 1 },
-            { answer: '무슨 일이지? 누가 실수로 스위치를 껐나? 괴한이 나타난 건 아니겠지?  별의 별 상상을 다 해본다.', score: 2 }
+            { answer: '무슨 일이지? 누가 실수로 스위치를 껐나?<br>괴한이 나타난 건 아니겠지?<br>별의 별 상상을 다 해본다.', score: 2 }
         ]
     },
     {
         q: { question: '그 때 친구가 속이 너무 안 좋다고 한다. 토할 것 같다고?!', type: 'FT'},
         a: [
-            { answer: '어떡해 너무 많이 마셨나보다 ㅠㅠ 밖에 나가서 바람 좀 쐴래?', score: 1 },
-            { answer: '으이구 그러니까 내가 조절해서 마시랬지! 숙취해소제라도 사다줄까?', score: 2 }
+            { answer: '어떡해 너무 많이 마셨나보다 ㅠㅠ<br>밖에 나가서 바람 좀 쐴래?', score: 1 },
+            { answer: '으이구 그러니까 내가 조절해서 마시랬지!<br>숙취해소제라도 사다줄까?', score: 2 }
         ]
     }
 
 ]
 
+/** ADDED:
+ * image src added
+ */
 const infoList = [
     {
       name: '텐동',
-      desc: 'desc1'
+      desc: 'desc1',
+      image: '/img/mbti/1.jpeg'
     },
     {
       name: '샌드위치',
-      desc: 'desc2'
+      desc: 'desc2',
+      image: '/img/mbti/2.jpeg'
     },
     {
       name: '스테이크',
-      desc: 'desc3'
+      desc: 'desc3',
+      image: '/img/mbti/3.jpeg'
     },
     {
       name: '타코야끼',
-      desc: 'desc4'
+      desc: 'desc4',
+      image: '/img/mbti/4.jpeg'
     },
     {
       name: '곱도리탕',
-      desc: 'desc5'
+      desc: 'desc5',
+      image: '/img/mbti/5.jpeg'
     },
     {
       name: '오믈렛',
-      desc: 'desc6'
+      desc: 'desc6',
+      image: '/img/mbti/6.jpeg'
     },
     {
-        name: '떡볶아',
-        desc: 'desc7'
-      },
-      {
-        name: '꿔바로우',
-        desc: 'desc8'
-      },
-      {
-        name: '로제파스타',
-        desc: 'desc9'
-      },
-      {
-        name: '스모어쿠키',
-        desc: 'desc10'
-      },
-      {
-        name: '마라탕',
-        desc: 'desc11'
-      },
-      {
-        name: '버블티',
-        desc: 'desc12'
-      },
-      {
-        name: '연어초밥',
-        desc: 'desc13'
-      },
-      {
-        name: '붕어빵',
-        desc: 'desc14'
-      },
-      {
-        name: '고구마치즈돈까스',
-        desc: 'desc15'
-      },
-      {
-        name: '수플레 펜케이크',
-        desc: 'desc16'
-      }
+        name: '떡볶이',
+        desc: 'desc7',
+        image: '/img/mbti/7.jpeg'
+    },
+    {
+      name: '꿔바로우',
+      desc: 'desc8',
+      image: '/img/mbti/8.jpeg'
+    },
+    {
+      name: '로제파스타',
+      desc: 'desc9',
+      image: '/img/mbti/9.jpeg'
+    },
+    {
+      name: '스모어쿠키',
+      desc: 'desc10',
+      image: '/img/mbti/10.jpeg'
+    },
+    {
+      name: '마라탕',
+      desc: 'desc11',
+      image: '/img/mbti/11.jpeg'
+    },
+    {
+      name: '버블티',
+      desc: 'desc12',
+      image: '/img/mbti/12.jpeg'
+    },
+    {
+      name: '연어초밥',
+      desc: 'desc13',
+      image: '/img/mbti/13.jpeg'
+    },
+    {
+      name: '붕어빵',
+      desc: 'desc14',
+      image: '/img/mbti/14.jpeg'
+    },
+    {
+      name: '고구마치즈돈까스',
+      desc: 'desc15',
+      image: '/img/mbti/15.jpeg'
+    },
+    {
+      name: '수플레 펜케이크',
+      desc: 'desc16',
+      image: '/img/mbti/16.jpeg'
+    }
 ]
 
 
 const taste = [
   {
-    q: {questoin: "1. 즐겨 먹는 마라탕 맵기 단계, 엽떡 맵기 단계"},
+  // REFACTOR: 오타수정
+    q: {question: "1. 즐겨 먹는 마라탕 맵기 단계, 엽떡 맵기 단계"},
     a: [
       {answer: "마라탕 안먹음", score: 1},
       {answer: "착한맛", score: 2},
@@ -348,7 +369,7 @@ const taste = [
 const average = [
   {
     q: {questoin: "주량(소주기준) n병"},
-    a: 
+    a:{}
   },
   {
     q: {questoin: "맵기 단계 (1단계: 못먹음 2단계: 진라면 순한맛 3단계: 신라면 4단계: 불닭 5단계: 그 이상)"},
