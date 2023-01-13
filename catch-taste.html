@@ -1,10 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>소소식탁</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/content.css" rel="stylesheet">
+  </head>
 
-</body>
+  <body>
+  <nav class="navbar navbar-light bg-light bg-transparent">
+    <a class="navbar-brand d-flex" href="index.html">
+      <div class="brand-box">
+        <img src="img/logo.png" alt="소소식탁" class="box-img d-inline-block align-text-top">
+      </div>
+      <p style="margin: auto; padding: 0 0 0 10px;">소소식탁</p>
+    </a>
+  </nav>
+  <main class="d-flex flex-column">
+    <div id="start-page" class="card w-75 mx-auto text-center"><div class="card-body gap-2">
+      <h5 class="card-title">제목</h5>
+      <p class="card-text">음식 취향 테스트 만들기</p>
+      <div class="input-group mb-3">
+        <input type="text" id="username" class="form-control" placeholder="사용자 닉네임을 입력하세요" aria-label="user-name" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="submit" onclick="js:start()">테스트 시작</button>
+        </div>
+      </div>
+     </div>
+    </div>
+    <div id="qna-page" class="card w-75 mx-auto text-center"><div class="card-body gap-2">
+      <div class="progress">
+        <div class="progress-bar  bg-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      
+      <div class="qBox card-title"></div>
+      <div class="aBox card-body d-grid gap-2 col-6 mx-auto"></div>
+      <button id="back-btn" type="button" class="btn btn-primary">이전</button>
+    </div>
+    </div>
+    <div id="result-page" class="card w-75 mx-auto text-center"><div class="card-body gap-2">
+      <div class="nameBox card-title"></div>
+      <div class="resultBox card-body"></div>
+    </div>
+    </div>
+  </main>
+  <footer class="py-3 fixed-bottom">
+    <p class="text-center text-muted" style="margin: 0!important;">&copy; 2022-2023 <a class="text-secondary" href="http://ssossotable.com">ssosso.table</a>, Inc</p>
+  </footer>
+    <script src="js/data.js" charset="utf-8"></script>
+    <script src="js/catch-taste/main.js" charset="utf-8"></script>
+    <script src="js/catch-taste/result.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
 </html>
