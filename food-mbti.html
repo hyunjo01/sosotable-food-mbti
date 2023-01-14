@@ -13,17 +13,24 @@
   <nav class="navbar navbar-light bg-light bg-transparent">
     <a class="navbar-brand d-flex" href="index.html">
       <div class="brand-box">
-        <img src="img/logo.png" alt="소소식탁" class="box-img d-inline-block align-text-top">
+        <img src="img/logo.png" alt="소소식탁" class="box-img">
       </div>
       <p style="margin: auto; padding: 0 0 0 10px;">소소식탁</p>
     </a>
   </nav>
   <main class="d-flex flex-column">
-    <div id="start-page" class="card w-75 mx-auto text-center"><div class="card-body gap-2">
+    <div id="start-page" class="card w-75 mx-auto text-center">
+      <div class="content-title-box">
+        <img src="img/mbti/title.jpeg" alt="소소식탁" class="content-title-box-img">
+      </div>
       <h5 class="card-title">푸비티아이(Food MBTI)</h5>
-      <p class="card-text">음식으로 알아보는 성격유형</p>
-      <a href="#" class="btn btn-primary" onclick="js:start()">검사 시작</a>
-    </div>
+      <p class="card-text">두근두근 신학기가 시작되었어요!<br>개강 후 일어나는 여러 상황에서<br>나에게 맞는 선택을 하고 결과를 확인해보세요!</p>
+      <div class="input-group mb-3">
+        <input type="text" id="username" class="form-control" placeholder="사용자 닉네임을 입력하세요" aria-label="user-name" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="submit" onclick="start(`${mbtiQnaList.length}`,'mbti')">시작하기</button>
+        </div>
+      </div>
     </div>
     <div id="qna-page" class="card w-75 mx-auto text-center"><div class="card-body gap-2">
       <div class="progress">
@@ -31,11 +38,7 @@
       </div>
       <div class="qBox card-title"></div>
       <div class="aBox"card-body d-grid gap-2 col-6 mx-auto></div>
-    </div>
-    </div>
-    <div id="result-page" class="card w-75 mx-auto text-center"><div class="card-body gap-2">
-      <div class="nameBox card-title"></div>
-      <div class="descBox card-body"></div>
+      <button id="back-btn" type="button" class="btn">이전</button>
     </div>
     </div>
   </main>
@@ -43,8 +46,7 @@
     <p class="text-center text-muted" style="margin: 0!important;">&copy; 2022-2023 <a class="text-secondary" href="http://ssossotable.com">ssosso.table</a>, Inc</p>
   </footer>
     <script src="js/data.js" charset="utf-8"></script>
-    <script src="js/start.js" charset="utf-8"></script>
-    <script src="js/result.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>
